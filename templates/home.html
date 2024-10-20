@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-light">Статьи</h1>
+    
+{% for article in articles %}
+        <h4></h4>
+            <div class="card text-bg-dark mb-3 mt-4" style="width: 100%;">
+          <div class="card-header"><p> Автор: {{ article.user }}</p></div>
+          <div class="card-body">
+            <h5 class="card-title"><a class="link-secondary" href="{% url 'article' article.id %} ">{{ article.title }}</a></h5>
+            <p class="card-text"><pre class="card-text">{{ article.get_short_text }}</pre></p>
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

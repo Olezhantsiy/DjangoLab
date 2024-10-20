@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+{% block content %}
+    <div class="card custom-bg mb-3 mt-4" style="max-width: 100rem;">
+          <div class="card-header"><p> Автор: {{ article.user }}</p></div>
+          <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text"><pre class="card-text">{{ article.text}}</pre></p>
+          </div>
+    </div>
+    <br><br>
+    <p class="text-white-50">Комментарии:</p>
+    <hr><br>
+    {% for com in comment %}
+        <p class="text-white-50">Пользователь: {{ com.user.username }}</p>  {# Используем username автора комментария #}
+        <p class="text-white-50">Время создания: {{ com.created_on|timesince }} назад</p>
+        <p class="text-white-50">{{ com.comment }}</p>
+        <br>
+    {% endfor %}
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn custom-btn">Оставить комментарий</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,51 @@
+.main-content {
+    margin-top: 80px;
+}
+
+body{
+    background-color: #333333;
+}
+
+.form-control {
+    background-color: #2c2c2c; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    border: 1px solid #444; /* Цвет рамки */
+}
+
+.form-control::placeholder {
+    color: #aaaaaa; /* Цвет плейсхолдера */
+}
+
+/* Добавление эффекта при фокусе */
+.form-control:focus {
+    background-color: #353535; /* Более светлый фон при фокусе */
+    color: #ffffff; /* Белый текст */
+    border-color: #b1b1b1; /* Цвет рамки при фокусе */
+}
+
+label {
+    color: #ffffff; /* Белый цвет текста меток */
+}
+
+.custom-bg {
+    background-color: #303030; /* Ваш цвет */
+    color: #ffffff; /* Цвет текста, чтобы обеспечить хороший контраст */
+}
+
+.custom-btn{
+    background-color: #303030; /* Ваш цвет */
+    color: #ffffff; /* Цвет текста, чтобы обеспечить хороший контраст */
+}
+
+.custom-btn:hover {
+    background-color: #333333; /* Более светлый цвет фона при наведении */
+    color: #ffffff; /* Цвет текста при наведении (можно изменить, если нужно) */
+    border-color: #666; /* Цвет границы при наведении (можно изменить) */
+}
+
+.card-text {
+    white-space: pre-wrap; /* Позволяет переносить строки и учитывать пробелы */
+    word-wrap: break-word; /* Переносит длинные слова на новую строку */
+    overflow-wrap: break-word; /* Совместимость с другими браузерами */
+}
+
